@@ -50,55 +50,55 @@ li {
 }
 
 body nav ul li nav ul li {
-    padding-bottom: 5px;    
+  padding-bottom: 5px;    
 }
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 body nav {
-    width: 100%;
+  width: 100%;
 }
 nav {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 nav ul {
-    display: flex;
-    flex-direction: column;    
+  display: flex;
+  flex-direction: column;    
 }
 
 .outerMenu { /* these are body nav ul li */
-    text-transform: uppercase;  
-    border-bottom: 1px solid #ddd;  
+  text-transform: uppercase;  
+  border-bottom: 1px solid #ddd;  
 }
 
 .outerMenu nav {
-    text-transform: none;    
+  text-transform: none;    
 }
 
 .outerMenu a {
-    padding-left: 10px;    
-    padding-top: 10px;
-    padding-bottom: 10px;
+  padding-left: 10px;    
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .outerMenu svg {
-    padding-left: 10px;    
+  padding-left: 10px;    
 }
 
 nav ul li {
-    display: flex;    
-    flex-direction: column;
+  display: flex;    
+  flex-direction: column;
 }
 nav ul li nav {
-    display: flex;    
-    background-color: #f9fbff;
+  display: flex;    
+  background-color: #f9fbff;
 }
 nav ul li nav ul li {
-    display: flex;    
-    color: black;
+  display: flex;    
+  color: black;
 }
 
 
@@ -106,22 +106,68 @@ nav ul li nav ul li {
 /* Add your CSS here */
 
 @media (min-width: 576px) {
-    /* switch from hamburger to full menu */
-    /* img { 
-        display: inline-block; 
-    } */
-    nav, nav ul, nav ul li {
-        flex-direction: row;
-    }
-    .outerMenu {
-        flex-direction: column;
-    }
-    .menuPart1 {
-        flex: 1
-    }
-    .menuPart2 {
+  /* switch from hamburger to full menu */
+  body nav {
+    position: relative;
+    margin-bottom: 0;
+  }
 
-    }
+  body nav ul {
+    margin-bottom: 0;
+  }
+
+  img { 
+    display: inline-block;
+    height: 74px;
+    width: 74px
+  }
+  .img-caption {
+    display: block;
+    font-size: 13px;
+    width: 74px;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: none;
+  }
+  
+  .hiwItem {
+    display: none;    /* TEMP HIDE 1 ICON GROUP FOR TSHOOTING */
+  }
+
+  nav, nav ul, nav ul li {
+    display: flex;
+    flex-direction: row;
+  }
+  .outerMenu {
+    flex-direction: column;
+  }
+  .outerMenu nav {
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+    width: 100%;
+    left: 0;
+  }
+  .outerMenu a {
+    padding-top: 0;
+  }
+  .menuPart1 {
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  nav .menuPart1ch {
+    width: 100%;
+    display: flex;
+  }
+
+  .menuPart1ch {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f9fbff;
+  }
 }
 
 @media (min-width: 768px) {
