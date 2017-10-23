@@ -6,6 +6,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    color:#6799ff;
+    position: relative;
 }
 
 .hamburger {
@@ -15,6 +18,10 @@ body {
     border-radius: 2px;
     box-shadow: 0 0 2px #eeeeef;
     padding: 10px 10px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    /* order: 1;             hamburger is before logo by default, this moves it after */
 }
 
 .hamburger-stripe {
@@ -23,5 +30,94 @@ body {
     margin-bottom: 5px;
 }
 
+ul, li {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/* body nav ul li {
+    padding-left: 10px;
+} */
+
+
+img {
+    display: none;
+}
+
+li {
+    list-style: none;
+    padding-top: 5px;
+}
+
+body nav ul li nav ul li {
+    padding-bottom: 5px;    
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body nav {
+    width: 100%;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+}
+nav ul {
+    display: flex;
+    flex-direction: column;    
+}
+
+.outerMenu { /* these are body nav ul li */
+    text-transform: uppercase;  
+    border-bottom: 1px solid #ddd;  
+}
+
+.outerMenu nav {
+    text-transform: none;    
+}
+
+.outerMenu a {
+    padding-left: 10px;    
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.outerMenu svg {
+    padding-left: 10px;    
+}
+
+nav ul li {
+    display: flex;    
+    flex-direction: column;
+}
+nav ul li nav {
+    display: flex;    
+    background-color: #f9fbff;
+}
+nav ul li nav ul li {
+    display: flex;    
+    color: black;
+}
+
+
+
 /* Add your CSS here */
 
+@media (min-width: 576px) {
+    /* switch from hamburger to full menu */
+    /* img { 
+        display: inline-block; 
+    } */
+    nav {
+        flex-direction: row;
+    }
+    nav ul li {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) {
+    /* switch menu spacing */
+}
