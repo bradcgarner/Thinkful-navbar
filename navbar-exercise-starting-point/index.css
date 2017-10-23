@@ -103,7 +103,7 @@ nav ul li nav ul li {
 
 
 
-/* Add your CSS here */
+/***** MEDIA > 576 *****/
 
 @media (min-width: 576px) {
   /* switch from hamburger to full menu */
@@ -142,6 +142,9 @@ nav ul li nav ul li {
   }
   .outerMenu {
     flex-direction: column;
+    border-bottom: none;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .outerMenu nav {
     position: absolute;
@@ -152,10 +155,18 @@ nav ul li nav ul li {
   }
   .outerMenu a {
     padding-top: 0;
+    text-align: center;
   }
   .menuPart1 {
     flex: 1;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid #ddd;  
+  }
+
+  .menuPart2 {
+    border-bottom: 1px solid #ddd;
+    padding-right: 10px;  
   }
 
   nav .menuPart1ch {
@@ -168,8 +179,14 @@ nav ul li nav ul li {
     justify-content: space-around;
     background-color: #f9fbff;
   }
+
 }
 
 @media (min-width: 768px) {
     /* switch menu spacing */
+
+  .outerMenu {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 }
