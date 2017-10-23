@@ -110,11 +110,17 @@ nav ul li nav ul li {
     /* img { 
         display: inline-block; 
     } */
-    nav {
+    nav, nav ul, nav ul li {
         flex-direction: row;
     }
-    nav ul li {
-        flex-direction: row;
+    .outerMenu {
+        flex-direction: column;
+    }
+    .menuPart1 {
+        flex: 1
+    }
+    .menuPart2 {
+
     }
 }
 

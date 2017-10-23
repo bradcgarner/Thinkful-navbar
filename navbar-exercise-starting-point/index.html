@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
     <title>Thinkful Navigation</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
@@ -19,7 +19,8 @@
 
     <!-- Main menu -->
     <nav>
-      <ul>
+      <!-- start 1st part of menu -->
+      <ul class="menuPart1">
 
         <li class="outerMenu">
           <!-- Thinkful logo -->
@@ -103,12 +104,20 @@
             Pricing
           </a>
         </li>
-        <li class="outerMenu">
-          <a href="#">
-            Sign in
-          </a>
-        </li>
       </ul>
+      <!-- start 2nd part of menu -->
+      <ul class="menuPart2">
+        <nav>
+          <ul>
+            <li class="outerMenu">
+              <a href="#">
+                Sign in
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </ul>
+      <!-- end 2nd part of menu -->
     </nav>
   </body>
 </html>
