@@ -193,11 +193,11 @@ main {
   &:hover {
     width: 40px;
     height: 40px;
-    // img {
-    //   height: 50px;
-    // }
     .stackToolTip {
       display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
     }
   }
 }
@@ -208,24 +208,27 @@ main {
   width: 160px;
   left: 50%;
   margin-left: -95px;
-  bottom: 55px;
-  height: 150px;
+  bottom: 40px;
+  height: 135px;
   padding: 10px;
   border-radius: 10px;
-
   margin-top: -50%;
-  h4 {
-    font-size: 14px;
-  }
-  p {
-    font-size: 12px;
-  }
   background-color: $white;
   border: 1px solid $lines;
   -moz-box-shadow: 4px 4px 4px -3px $shadow;
   -webkit-box-shadow: 4px 4px 4px -3px $shadow;
   box-shadow: 4px 4px 4px -3px $shadow;
   z-index: 999;
+  h4 {
+    font-size: 14px;
+  }
+  p {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  a {
+    text-decoration: underline;
+  }
 }
 
 .stackToolTip:after, .stackToolTip:before {
@@ -386,16 +389,19 @@ header, footer {
     color: lighten($accent,20%);
   }
 }
-.aboutDetail, .projectMore {
+.aboutDetailWrapper, .projectMoreWrapper {
+  max-height: 300px;
+}
+.aboutDetail {
+  color: $accentLight;
+}
+.aboutDetail, .projectMoreDetail {
   padding: 5px;
   line-height: 1.3em;
-  color: $accentLight;
   max-height: 500px;
   overflow: none;
 }
-.aboutDetailWrapper {
-  max-height: 300px;
-}
+
 
 // @@@@@@@@@@@@@@@@@@@@@@@@@@
 
@@ -455,66 +461,71 @@ header, footer {
   }
 }
 
-.projectContent { // all the content except stack, may be a column or row
+.projectContentColumn { // all the content except stack
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.projectContentRow { // inside projectContent
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
-.projectDescLeft { // container for descriptions floating left of project; sets width
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-}
-
 .projectTitle, .bigFont { // name of project
   font-size: 24px;
+  margin-bottom: 15px;
   
 }
-.projectDesc {
-  line-height: 1.2em;
-  font-size: 16px;
-  margin-top: 7px;
-}
-ul.projectDesc {
-  margin-left: 20px;
-  margin-top: 10px;
-  li {
-    list-style: square;
-    margin-top: 5px
-  }
-}
+// .projectDesc {
+//   line-height: 1.2em;
+//   font-size: 16px;
+//   margin-top: 7px;
+// }
+// ul.projectDesc {
+//   margin-left: 20px;
+//   margin-top: 10px;
+//   li {
+//     list-style: square;
+//     margin-top: 5px
+//   }
+// }
 
 .projectMoreContainer {
 
 }
 
 .projectMoreButton{
-
+  // margin-bottom: 5px;
+  padding: 5px;
+  font-size: 18px;
+  margin-top: 15px;
 }
-.projectMore{
-
+.projectMoreDetail {
+  color: darken($accentLight, 20%);
 }
-.projectMoreHide{
-
-}
-.project1 {
+.projectMainCaption {
+  margin-top: 25px;
 }
 
 .phone { // contains svg
   position: relative;
   width: 200px;
+  height: 349.58px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
 }
+
 .phoneScreen { // contains gif
   position: absolute;
-  top: 16%;
-  left: 10%;
+  top: 55.93px; // 16%
+  left: 20px; //10%
   z-index: 2;
-  width: 67%;
+  width: 134px; //67%
   img {
     width: 100%;
   }
@@ -522,31 +533,30 @@ ul.projectDesc {
 .phoneShadow {
   position: absolute;
   background-color: transparent;
-  height: 91%;
-  width: 75%;
-  top: 5%;
-  left: 5%;
+  height: 318.12px; //91%
+  width: 147px; //~75%
+  top: 17px; //~5%
+  left: 17px;
   border-radius: 20px;
 }
 
-// @@@@@@@@@@@@@@@@@@@@@@@@@@
-
-.project2 {
-  flex-direction: column;
-  .floating {
+.screen {
+  margin-top: 7px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  // flex: 1;
+  img {
     width: 100%;
-    margin-bottom: 20px;
+    // height: auto;
+    object-fit: contain;
   }
 }
 
-// @@@@@@@@@@@@@@@@@@@@@@@@@@
-
-.project3 {
-  flex-direction: row;
-
-}
-
 // @@@@@@@@@@@@@@@@@@@@@@@@@
+
 footer {
   margin-top: 200px;  
 }
@@ -571,7 +581,7 @@ $transitionSpeed: 1.0s;
 .transition, .transitionContents, .collapsed { 
   transition-property: all;
   transition-duration: $transitionSpeed;
-  transition-timing-function: cubic-bezier();  
+  transition-timing-function: ease;  
 }
 .collapsed {
   max-height: 0;
@@ -583,4 +593,12 @@ $transitionSpeed: 1.0s;
   .transitionContents {
     color: transparent;    
   }
+}
+
+.aboutCaret, .projectCaret {
+  padding-left: 5px;
+  color: $accentLight;
+}
+.fa-caret-up {
+  color: transparent;
 }

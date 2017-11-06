@@ -127,7 +127,10 @@ main {
     width: 40px;
     height: 40px; }
     .stackIcon:hover .stackToolTip {
-      display: flex; }
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start; }
 
 .stackToolTip {
   display: none;
@@ -135,8 +138,8 @@ main {
   width: 160px;
   left: 50%;
   margin-left: -95px;
-  bottom: 55px;
-  height: 150px;
+  bottom: 40px;
+  height: 135px;
   padding: 10px;
   border-radius: 10px;
   margin-top: -50%;
@@ -149,7 +152,10 @@ main {
   .stackToolTip h4 {
     font-size: 14px; }
   .stackToolTip p {
-    font-size: 12px; }
+    font-size: 12px;
+    margin-top: 10px; }
+  .stackToolTip a {
+    text-decoration: underline; }
 
 .stackToolTip:after, .stackToolTip:before {
   position: absolute;
@@ -303,15 +309,17 @@ header, footer {
   .aboutHeader:hover {
     color: #b67445; }
 
-.aboutDetail, .projectMore {
+.aboutDetailWrapper, .projectMoreWrapper {
+  max-height: 300px; }
+
+.aboutDetail {
+  color: #A8A294; }
+
+.aboutDetail, .projectMoreDetail {
   padding: 5px;
   line-height: 1.3em;
-  color: #A8A294;
   max-height: 500px;
   overflow: none; }
-
-.aboutDetailWrapper {
-  max-height: 300px; }
 
 .projectsHeader {
   position: absolute;
@@ -361,65 +369,69 @@ header, footer {
     .projectContainer {
       width: 80%; } }
 
-.projectContent {
+.projectContentColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; }
+
+.projectContentRow {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start; }
 
-.projectDescLeft {
-  width: 300px;
-  display: flex;
-  flex-direction: column; }
-
 .projectTitle, .bigFont {
-  font-size: 24px; }
+  font-size: 24px;
+  margin-bottom: 15px; }
 
-.projectDesc {
-  line-height: 1.2em;
-  font-size: 16px;
-  margin-top: 7px; }
+.projectMoreButton {
+  padding: 5px;
+  font-size: 18px;
+  margin-top: 15px; }
 
-ul.projectDesc {
-  margin-left: 20px;
-  margin-top: 10px; }
-  ul.projectDesc li {
-    list-style: square;
-    margin-top: 5px; }
+.projectMoreDetail {
+  color: #766f60; }
+
+.projectMainCaption {
+  margin-top: 25px; }
 
 .phone {
   position: relative;
   width: 200px;
+  height: 349.58px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start; }
 
 .phoneScreen {
   position: absolute;
-  top: 16%;
-  left: 10%;
+  top: 55.93px;
+  left: 20px;
   z-index: 2;
-  width: 67%; }
+  width: 134px; }
   .phoneScreen img {
     width: 100%; }
 
 .phoneShadow {
   position: absolute;
   background-color: transparent;
-  height: 91%;
-  width: 75%;
-  top: 5%;
-  left: 5%;
+  height: 318.12px;
+  width: 147px;
+  top: 17px;
+  left: 17px;
   border-radius: 20px; }
 
-.project2 {
-  flex-direction: column; }
-  .project2 .floating {
+.screen {
+  margin-top: 7px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start; }
+  .screen img {
     width: 100%;
-    margin-bottom: 20px; }
-
-.project3 {
-  flex-direction: row; }
+    object-fit: contain; }
 
 footer {
   margin-top: 200px; }
@@ -434,7 +446,7 @@ footer {
 .transition, .transitionContents, .collapsed {
   transition-property: all;
   transition-duration: 1s;
-  transition-timing-function: cubic-bezier(); }
+  transition-timing-function: ease; }
 
 .collapsed {
   max-height: 0;
@@ -445,5 +457,12 @@ footer {
   overflow: none; }
   .collapsed .transitionContents {
     color: transparent; }
+
+.aboutCaret, .projectCaret {
+  padding-left: 5px;
+  color: #A8A294; }
+
+.fa-caret-up {
+  color: transparent; }
 
 /*# sourceMappingURL=main.css.map */
